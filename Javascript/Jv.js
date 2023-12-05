@@ -106,7 +106,7 @@ function Population(){
                     <div class="likes js-likes">
                         <div class="likes__cta">
 
-                            <a class="like-button  js-like-button" href="#" data-postid="1">
+                            <a class="like-button  js-like-button" data-postid="${index.id}">
 
                                 <i class="like-button__icon fas fa-thumbs-up" aria-hidden="true"></i>
 
@@ -137,15 +137,72 @@ function Population(){
 //chiamo funzione popolamento
 Population();
 
-const like = document.querySelector(".js-like-button");
 
-// Se clicco la freccia di destra, scorrerrà in avanti
-like.addEventListener('click',  
+//acquisisco tutti i tasti mi piace in pagina all'interno di un array
+const like = document.querySelectorAll(".js-like-button");
 
-            function () {
+//acquisisco il numero per ogni tasto mi piace in pagina all'interno di un array
+const count = document.querySelectorAll(".likes__counter");
 
-            console.log("ok");
+//inizializzo un array
+const val = [];
+
+//imposto un ciclo for sul numero dei tasti mi piace
+for (let i = 0; i < like.length; i++) {
+
+    //per ogni tasto mi piace associo un eventListner al click
+    like[i].addEventListener("click", 
+
+        function() {
+
+            //acquisisco i valore in posizione i nella pagina
+            let number =  count[i].querySelector('.js-likes-counter').innerHTML;
+
+            //lo incremento di uno
+            number++;
+
+            //se il numero non è presente nel mio array di valori
+            if(!val.includes(i)){
+
+                //aggiungo al tasto mi piace la classe onclick che lo colora di blu
+                like[i].classList.add("onclick");
+
+                // copio tale valore nel mio array
+                val[i]= i;
+
+                //modifico in pagina il numero in corrispondenza del tasto mi piace 
+                count[i].querySelector('.js-likes-counter').innerHTML = number ;
+
+               
+
+            }
+
+            //altrimenti
+            else {
+
+                //rimuovo la classe onclick
+                like[i].classList.remove("onclick");
+
+                //elimino l'elemento dal mio array
+                val.splice(i, 1);
+
+                //acquisisco il valore dalla mia pagina html
+                let number =  count[i].querySelector('.js-likes-counter').innerHTML;
+
+                //decremento tale valore
+                number--;
+
+                //rinserisco in pagina nuovo valore
+                count[i].querySelector('.js-likes-counter').innerHTML = number ;
+
+               
+            }
+                
+          
+            
+        });
+}
+
+//
 
 
-
-});
