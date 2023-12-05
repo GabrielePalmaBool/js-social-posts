@@ -117,7 +117,7 @@ function Population(){
 
                         <div class="likes__counter">
 
-                            Piace a <b id="like-counter-1" class="js-likes-counter">80</b> persone
+                            Piace a <b id="like-counter-1" class="js-likes-counter">${index.links}</b> persone
 
                         </div>
 
@@ -136,3 +136,16 @@ function Population(){
 
 //chiamo funzione popolamento
 Population();
+
+const like = document.querySelector(".js-like-button");
+
+// Se clicco la freccia di destra, scorrerrà in avanti
+like.addEventListener('click',  
+
+            function () {
+
+            console.log("ok");
+
+
+
+});
