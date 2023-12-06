@@ -16,7 +16,7 @@ const posts = [
         "content": "Provident alias sint. Officiis hic magnam veritatis et similique magnam. Amet earum saepe deleniti quam expedita assumenda omnis necessitatibus.",
         "media":"https://unsplash.it/600/300?image=171",
         "author" : {
-            "name" : "Peppino di Capri",
+            "name" : "Pinco Panco",
             "image" : "https://unsplash.it/300/300?image=15"
 
         },
@@ -29,7 +29,7 @@ const posts = [
         "content": "Provident alias sint. Officiis hic magnam veritatis et similique magnam. Amet earum saepe deleniti quam expedita assumenda omnis necessitatibus.",
         "media":"https://unsplash.it/600/300?image=2",
         "author" : {
-            "name" : "Nino d'angelo",
+            "name" : "Panco Pinco",
             "image" : "https://unsplash.it/300/300?image=24"
 
         },
@@ -42,12 +42,12 @@ const posts = [
         "content": "Provident alias sint. Officiis hic magnam veritatis et similique magnam. Amet earum saepe deleniti quam expedita assumenda omnis necessitatibus.",
         "media":"https://unsplash.it/600/300?image=131",
         "author" : {
-            "name" : "Gigi",
+            "name" : "MArio Rossi",
             "image" : "https://unsplash.it/300/300?image=132"
 
         },
         "links": 32,
-        "created": "20161-12-17"
+        "created": "2016-12-17"
     },
 
     {
@@ -55,7 +55,7 @@ const posts = [
         "content": "Provident alias sint. Officiis hic magnam veritatis et similique magnam. Amet earum saepe deleniti quam expedita assumenda omnis necessitatibus.",
         "media":"https://unsplash.it/600/300?image=81",
         "author" : {
-            "name" : "Pippo Baudo",
+            "name" : "Luca Neri",
             "image" : "https://unsplash.it/300/300?image=103"
 
         },
@@ -68,7 +68,7 @@ const posts = [
         "content": "Provident alias sint. Officiis hic magnam veritatis et similique magnam. Amet earum saepe deleniti quam expedita assumenda omnis necessitatibus.",
         "media":"https://unsplash.it/600/300?image=234",
         "author" : {
-            "name" : "Celentano",
+            "name" : "Mirco Grigio",
             "image" : "https://unsplash.it/300/300?image=233"
 
         },
@@ -84,6 +84,15 @@ function Population(){
     //imposto un filtro sul mio array di oggetti
     posts.forEach ((index) => {
         
+        /*
+        const minute = 1000 * 60;
+        const hour = minute * 60;
+        const day = hour * 24;
+        const year = day * 365;
+
+        const d = new Date(index.created);
+        let years = Math.round(d.getYear()/ year);
+        console.log(years);*/
         
             data = `
             <div class="post">
