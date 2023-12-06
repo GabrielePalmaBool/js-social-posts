@@ -2,8 +2,9 @@
 
 Ricreiamo un feed social aggiungendo al layout di base fornito
 
-*/
+Bonus: creazione funzione data con odifica formato in pagina html
 
+*/
 
 
 //SVOLGIMENTO
@@ -84,7 +85,8 @@ function Population(){
     //imposto un filtro sul mio array di oggetti
     posts.forEach ((index) => {
         
-       
+        //calcolo della data
+        let result= DateYM(index);
 
             data = `
             <div class="post">
@@ -95,7 +97,7 @@ function Population(){
                         </div>
                         <div class="post-meta__data">
                             <div class="post-meta__author">${index.author.name}</div>
-                            <div class="post-meta__time">${index.created}</div>
+                            <div class="post-meta__time">${result}</div>
                         </div>
                     </div>
                 </div>
@@ -204,6 +206,76 @@ for (let i = 0; i < like.length; i++) {
         });
 }
 
+function DateYM(index){
 
+    let val = index.created;
+    
+    let dateC =new Date();
+
+    let date = new Date(val);
+
+
+    //restituisce l'anno corrente
+    let year = dateC.getFullYear();
+
+    //restituisce mese corrente da 0 a 11 e quindi si aggiunge 1
+    let month = dateC.getMonth()+1;
+
+    //restituisce giorno corrente
+    let day = dateC.getDate();
+
+
+    //restituisce l'anno inserito
+    let year2 = date.getFullYear();
+
+    //restituisce mese inserito da 0 a 11 e quindi si aggiunge 1
+    let month2 = date.getMonth()+1;
+
+    let yearR = year - year2;
+
+    
+    if(yearR === 0 ){
+   
+        let monthR = month - month2;
+
+        let result = " Scattata "+monthR+" mesi fà";
+
+        return result;
+
+    }
+
+    else if(yearR != 0){
+
+
+        if(month<month2){
+
+            let monthR = (12 + month) - month2;
+
+            let result = " Scattata "+(yearR-1)+" anni e "+monthR+" mesi fà";
+    
+            return result;
+        }
+
+        else if(month>month2) {
+
+            let monthR = month - month2;
+            
+            let result = " Scattata "+yearR+" anni e "+monthR+" mesi fà";
+    
+            return result;
+        }
+
+        else  {
+
+            let result = " Scattata "+yearR+" anni fà";
+    
+            return result;
+        }
+  
+        
+
+    }
+
+}
 
 
